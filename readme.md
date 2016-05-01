@@ -43,3 +43,5 @@ Once the Selenium server is running, run this command in another tab:
 ```
 protractor config.js
 ```
+
+© 2016 Berlin Alexander Grischuk ALL RIGHTS RESERVED
