@@ -12,6 +12,7 @@
   "bugs": {
     "url": "https://gitlab.com/centner/udemy-protractor/issues"
   },
+  "homepage": "https://gitlab.com/centner/udemy-protractor#readme",
   "dependencies": {
     "protractor": "^3.2.2"
   },
