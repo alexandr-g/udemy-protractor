@@ -4,7 +4,8 @@
   "description": "End-to-End Testing with Protractor",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/protractor/bin/protractor config.js"
   },
   "author": "Alexander Grischuk",
   "license": "ISC",
