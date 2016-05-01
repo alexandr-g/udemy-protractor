@@ -1,4 +1,5 @@
 var helper = require('./helper');
+var faker = require('faker');
 
 describe('Main page : login/register', function() {
 
@@ -9,6 +10,12 @@ describe('Main page : login/register', function() {
     afterEach(function() {
         browser.manage().deleteAllCookies();
     });
+
+    var randomFirstName = faker.name.firstName();
+    var randomLastName = faker.name.lastName();
+    var email = faker.internet.email();
+    var password = faker.internet.password();
+    var username = faekr.internet.userName();
 
     it('should have a title', function() {
         var title = 'Etsy - Your place to buy and sell all things handmade, vintage, and supplies';
@@ -52,12 +59,12 @@ describe('Main page : login/register', function() {
 
         registerButtonOnMainPage.click()
         helper.waitUntilReady(firstNameField)
-        firstNameField.sendKeys('QA')
-        lastNameField.sendKeys('Automation')
-        emailField.sendKeys('test@test.com')
-        passwordField.sendKeys('password')
-        passwordConfirmField.sendKeys('password')
-        usernameRegisterField.sendKeys('qa_test')
+        firstNameField.sendKeys(randomFirstName)
+        lastNameField.sendKeys(randomLastName)
+        emailField.sendKeys(email)
+        passwordField.sendKeys(password)
+        passwordConfirmField.sendKeys(password)
+        usernameRegisterField.sendKeys(username)
         helper.waitUntilReady(etsyFinds)
         etsyFinds.click()
         helper.waitUntilReady(registerButtonRegisterPopUp)
