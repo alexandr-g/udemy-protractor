@@ -15,10 +15,10 @@ describe('Main page : login/register', function() {
     var randomLastName = faker.name.lastName();
     var email = faker.internet.email();
     var password = faker.internet.password();
-    var username = faekr.internet.userName();
+    var username = faker.internet.userName();
 
     it('should have a title', function() {
-        var title = 'Etsy - Your place to buy and sell all things handmade, vintage, and supplies';
+        var title = 'Etsy :: Your place to buy and sell all things handmade';
         expect(browser.getTitle()).toEqual(title);
     });
 
