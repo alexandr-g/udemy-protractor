@@ -1,4 +1,10 @@
+var CartPage = require('./cart.po.js');
+var CommonElements = require('../common/common.po.js');
+
 describe('Cart page :', function() {
+
+    var commonElements = new CommonElements();
+    var cartPage = new CartPage();
 
     beforeEach(function() {
         browser.get(browser.params.url);
@@ -9,11 +15,8 @@ describe('Cart page :', function() {
     });
 
     it('should navigate to the cart and verify that it is empty', function() {
-        var cartIcon = element(by.css('[title="Cart"]'));
-        var errorMessageEmptyCart = element(by.xpath(".//*[@id='newempty']/div/h2"));
-    
-        cartIcon.click();
-        expect(errorMessageEmptyCart.getText()).toBe('Your cart is empty.');
+        commonElements.cartIcon.click();
+        expect(cartPage.errorMessageEmptyCart.getText()).toBe(cartPage.emptyCartNotificationText);
     });
 
 });
