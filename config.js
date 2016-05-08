@@ -7,8 +7,8 @@ exports.config = {
   },
   suites: {
       cart: 'pages/cart/**/*.spec.js',
-      login: 'pages/login/**/*.spec.js',
-      seacrh: 'pages/search/**/*.spec.js'
+      home: 'pages/home/**/*.spec.js',
+      search: 'pages/search/**/*.spec.js'
   },
   onPrepare: function() {
       browser.ignoreSynchronization = true;
