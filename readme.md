@@ -44,4 +44,11 @@ Once the Selenium server is running, run this command in another tab:
 protractor config.js
 ```
 
+It is possible to run tests by test suites/groups separately:
+
+```
+protractor config.js --suite home
+protractor config.js --suite cart
+```
+
 © 2016 Berlin Alexander Grischuk ALL RIGHTS RESERVED
