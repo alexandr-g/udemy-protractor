@@ -12,7 +12,7 @@ var HomePage = function() {
     this.usernameField = element(by.id('username-existing'));
     this.userPasswordField = element(by.id('password-existing'));
     this.passwordExistingError = element(by.id('password-existing-error'));
-
+    this.usernameExistingError = element(by.id('username-existing-error'));
 
     //register
     this.registerButtonOnMainPage = element(by.id('register'));
