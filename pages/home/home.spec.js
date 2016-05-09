@@ -1,5 +1,4 @@
 var helper = require('../../helper');
-var faker = require('faker');
 var HomePage = require('./home.po.js');
 
 describe('Home page : ', function() {
@@ -13,12 +12,6 @@ describe('Home page : ', function() {
     afterEach(function() {
         browser.manage().deleteAllCookies();
     });
-
-    var randomFirstName = faker.name.firstName();
-    var randomLastName = faker.name.lastName();
-    var email = faker.internet.email();
-    var password = faker.internet.password();
-    var username = faker.internet.userName();
 
     it('should have a title', function() {
         expect(browser.getTitle()).toEqual(homePage.pageTitle);
@@ -45,7 +38,7 @@ describe('Home page : ', function() {
         expect(homePage.passwordExistingError.getText()).toBe(homePage.passwordBlankText)
     });
 
-    it('should try to sign in and vefiry that email cant be blank error appear', function() {
+    it('should try to sign in and vefiry that email cant be blank', function() {
         homePage.goToLogin()
         helper.waitUntilReady(homePage.userPasswordField)
         homePage.userPasswordField.sendKeys('something')
@@ -57,15 +50,7 @@ describe('Home page : ', function() {
 
     it('should register a new user', function() {
         homePage.goToRegister()
-        helper.waitUntilReady(homePage.firstNameField)
-        homePage.firstNameField.sendKeys(randomFirstName)
-        homePage.lastNameField.sendKeys(randomLastName)
-        homePage.emailField.sendKeys(email)
-        homePage.passwordField.sendKeys(password)
-        homePage.passwordConfirmField.sendKeys(password)
-        homePage.usernameRegisterField.sendKeys(username)
-        helper.waitUntilReady(homePage.etsyFinds)
-        homePage.etsyFinds.click()
+        homePage.doRegister()
         helper.waitUntilReady(homePage.registerButtonRegisterPopUp)
     });
 
