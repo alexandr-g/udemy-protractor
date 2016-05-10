@@ -1,5 +1,5 @@
-var helper = require('../../helper');
-var faker = require('faker');
+var helper = require('../../helper'),
+    faker = require('faker');
 
 var HomePage = function() {
 

@@ -1,5 +1,5 @@
-var helper = require('../../helper');
-var HomePage = require('./home.po.js');
+var helper = require('../../helper'),
+    HomePage = require('./home.po.js');
 
 describe('Home page : ', function() {
 
