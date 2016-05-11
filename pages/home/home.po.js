@@ -22,6 +22,7 @@ var HomePage = function() {
     this.userPasswordField = element(by.id('password-existing'));
     this.passwordExistingError = element(by.id('password-existing-error'));
     this.usernameExistingError = element(by.id('username-existing-error'));
+    this.registerTab = element(by.id('register-tab'));
 
     //register form elements
     this.registerButtonOnMainPage = element(by.id('register'));
@@ -38,6 +39,11 @@ var HomePage = function() {
     this.goToRegister = function() {
         helper.waitElementToBeClickable(this.registerButtonOnMainPage)
         this.registerButtonOnMainPage.click()
+    }
+
+    this.goToRegisterTab = function() {
+        helper.waitElementToBeClickable(this.registerTab)
+        this.registerTab.click()
     }
 
     this.goToLogin = function() {

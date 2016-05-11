@@ -48,6 +48,13 @@ describe('Home page : ', function() {
         expect(homePage.usernameExistingError.getText()).toBe(homePage.passwordBlankText)
     });
 
+    it('should navigate to register tab thru login pop up and register', function() {
+        homePage.goToLogin()
+        homePage.goToRegisterTab()
+        homePage.doRegister()
+        expect(homePage.registerButtonRegisterPopUp.isDisplayed()).toBeTruthy()
+    });
+
     it('should register a new user', function() {
         homePage.goToRegister()
         homePage.doRegister()
