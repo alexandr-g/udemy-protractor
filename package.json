@@ -14,6 +14,7 @@
   },
   "homepage": "https://gitlab.com/centner/udemy-protractor#readme",
   "dependencies": {
+    "dotenv": "^2.0.0",
     "protractor": "^3.2.2"
   },
   "devDependencies": {
