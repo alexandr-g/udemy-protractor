@@ -1,6 +1,9 @@
-var helper = require('../../helper');
+var helper = require('../../helper'),
+    SearchPage = require('./search.po.js');
 
 describe('Search :', function() {
+
+    var searchPage = new SearchPage();
 
     beforeEach(function() {
         browser.get(browser.params.url);
@@ -11,16 +14,20 @@ describe('Search :', function() {
         browser.manage().deleteAllCookies();
     });
 
-    it('should for a vinyl item', function() {
-        var searchField = element(by.id('search-query'));
-        var searchButton = element(by.linkText('Search'));
-        var searchItem = element(by.xpath(".//*[@id='content']/div/div/div[2]/div/div[3]/div[1]/div[3]/div[1]"));
-
-        searchField.sendKeys('vinyl');
-        helper.waitUntilReady(searchButton);
-        searchButton.click();
-        helper.waitUntilReady(searchItem);
-        searchItem.click();
+    it('should search for a iPhone 6 case', function(done) {
+        searchPage.searchField.sendKeys('Wolf Fox Feathers Black Mandala Henna Phone Case iPhone 6')
+        .then(function() {
+            return helper.waitUntilReady(searchPage.searchButton);
+        })
+        .then(function() {
+            return searchPage.searchButton.click();
+        })
+        .then(function() {
+            return helper.waitUntilReady(searchPage.searchItem);
+        })
+        .then(function() {
+            return searchPage.searchItem.click();
+        })
+        .then(done);
     });
-
 });
