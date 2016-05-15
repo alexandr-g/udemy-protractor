@@ -30,4 +30,27 @@ describe('Search :', function() {
         })
         .then(done);
     });
+
+    it('try to search for a iPhone 6 case and get "Please select a device" error', function(done) {
+        searchPage.searchField.sendKeys('Wolf Fox Feathers Black Mandala Henna Phone Case iPhone 6')
+        .then(function() {
+            return helper.waitUntilReady(searchPage.searchButton);
+        })
+        .then(function() {
+            return searchPage.searchButton.click();
+        })
+        .then(function() {
+            return helper.waitUntilReady(searchPage.searchItem);
+        })
+        .then(function() {
+            return searchPage.searchItem.click();
+        })
+        .then(function() {
+            return searchPage.addToCartButton.click();
+        })
+        .then(function() {
+            return expect(searchPage.selectDeviceErorrText.getText()).toBe('Please select a device');
+        })
+        .then(done);
+    });
 });
